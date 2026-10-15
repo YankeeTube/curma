@@ -1,0 +1,15 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "curma",
+	"compatibility_date": "2026-10-15",
+	"workers_dev": true,
+	"limits": { "cpu_ms": 1 },
+	"assets": {
+		"directory": "./build",
+		"not_found_handling": "404-page"
+	},
+	"observability": {
+		"enabled": true,
+		"traces": { "enabled": true }
+	}
+}
