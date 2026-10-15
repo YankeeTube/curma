@@ -8,6 +8,9 @@
 - `src/routes/+page.svelte`: 서비스 바로가기 메인페이지
 - `src/routes/+layout.svelte`: 공통 헤더와 푸터
 - `src/routes/layout.css`: 반응형 레이아웃과 테마
+- `src/lib/components/Ad.svelte`: 상단 배너와 사이드 광고
+- `src/lib/components/Maps.svelte`: 우측 이환·몬길 맵스 홍보 카드
+- `src/lib/client/adsense.ts`: 표시된 광고의 중복 없는 초기화
 - `static/ads.txt`: 메이플커마와 동일한 AdSense 게시자 설정
 - `wrangler.jsonc`: Cloudflare 배포 설정
 
@@ -39,6 +42,8 @@ Cloudflare 인증이 설정된 환경에서 실행하시면 됩니다. Workers B
 
 Worker 스크립트 없이 Cloudflare Static Assets가 파일을 직접 제공합니다. CPU 제한은 Worker 실행에 대한 설정이며, 정적 파일 제공 시 애플리케이션 Worker 코드가 실행되지는 않습니다.
 
-배포 후 Cloudflare에서 `curma.cc` 도메인을 연결해 주세요. canonical과 sitemap은 `https://curma.cc/`를 기준으로 작성되어 있습니다. `ads.txt`만 설정되어 있으며 광고 스크립트와 광고 슬롯은 포함하지 않습니다.
+배포 후 Cloudflare에서 `curma.cc` 도메인을 연결해 주세요. canonical과 sitemap은 `https://curma.cc/`를 기준으로 작성되어 있습니다.
+
+광고는 기존 메이플커마·던파커마의 게시자(`ca-pub-9888197614457245`)와 슬롯을 사용합니다. 헤더 아래에는 90px 배너(`1878597845`), 화면 폭 1084px 이상에서는 왼쪽에 300×600(`1365083446`)과 300×250(`1878597845`) 광고를 표시합니다. 개발 모드에서는 광고를 요청하지 않습니다. 숨겨진 사이드 광고는 표시될 때 한 번만 초기화합니다. 실제 광고 송출은 AdSense의 사이트 승인 및 광고 제공 상태에 따라 달라집니다.
 
 공식 문서: [SvelteKit SSG](https://svelte.dev/docs/kit/adapter-static), [Cloudflare Static Assets](https://developers.cloudflare.com/workers/static-assets/), [Wrangler CPU 설정](https://developers.cloudflare.com/workers/wrangler/configuration/#limits).

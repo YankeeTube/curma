@@ -1,6 +1,9 @@
 <script lang="ts">
 	import './layout.css';
 	import { asset, resolve } from '$app/paths';
+	import { dev } from '$app/env';
+	import Ad from '#lib/components/Ad.svelte';
+	import Maps from '#lib/components/Maps.svelte';
 	import Theme from '#lib/components/Theme.svelte';
 	import type { LayoutProps } from './$types';
 
@@ -12,6 +15,13 @@
 	<link rel="icon" type="image/svg+xml" href={asset('logo.svg')} />
 	<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 	<meta name="theme-color" content="#0a0b0c" media="(prefers-color-scheme: dark)" />
+	{#if !dev}
+		<script
+			async
+			crossorigin="anonymous"
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9888197614457245"
+		></script>
+	{/if}
 </svelte:head>
 
 <a class="skip" href="#content">본문으로 바로가기</a>
@@ -28,7 +38,13 @@
 		</nav>
 		<Theme />
 	</header>
+	<aside class="adside" aria-label="광고">
+		<Ad size="tall" />
+		<Ad size="medium" />
+	</aside>
+	<Maps />
 	<main id="content" tabindex="-1">
+		<div class="adtop" role="region" aria-label="광고"><Ad /></div>
 		{@render children()}
 	</main>
 	<footer class="footer">

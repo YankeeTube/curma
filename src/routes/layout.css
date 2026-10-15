@@ -153,6 +153,59 @@ svg {
 .theme:hover {
 	background: var(--wash);
 }
+.adtop {
+	position: sticky;
+	top: 56px;
+	z-index: 15;
+	height: 90px;
+}
+.adside {
+	position: fixed;
+	top: 0;
+	left: max(0px, calc(50% - 684px));
+	display: none;
+	width: 300px;
+	height: 850px;
+}
+.advert {
+	position: relative;
+	width: 100%;
+	height: 90px;
+	background: #f4f5f7;
+	color: #a5a7af;
+}
+.advert[data-size='tall'] {
+	width: 300px;
+	height: 600px;
+	background: #e6e8ec;
+}
+.advert[data-size='medium'] {
+	width: 300px;
+	height: 250px;
+	background: #eceef2;
+}
+.advert .adsbygoogle {
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.advert > span {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	font-size: 14px;
+	pointer-events: none;
+}
+.advert .adsbygoogle[data-ad-status='filled'] + span {
+	display: none;
+}
+.dark .advert {
+	background: #1d1d1d;
+	color: #727272;
+}
 main {
 	min-height: calc(100dvh - 56px);
 	border-inline: 1px solid var(--line);
@@ -379,6 +432,14 @@ h1 {
 }
 .dark .footer {
 	background: #0a0b0c;
+}
+@media (min-width: 1084px) {
+	.shell {
+		margin-left: max(300px, calc((100% - 768px) / 2));
+	}
+	.adside {
+		display: block;
+	}
 }
 @media (max-width: 639px) {
 	.page {
