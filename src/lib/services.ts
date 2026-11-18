@@ -40,6 +40,30 @@ export const services = [
 		tone: 'green'
 	},
 	{
+		name: '니케 맵스',
+		link: 'https://tlnd.cc/nikke',
+		domain: 'tlnd.cc/nikke',
+		description: '승리의 여신: 니케 유실물 위치와 수집 기록',
+		icon: 'icons/map.svg',
+		tone: 'cyan'
+	},
+	{
+		name: '니케 에셋',
+		link: 'https://tlnd.cc/nikke/assets',
+		domain: 'tlnd.cc/nikke/assets',
+		description: '니케 캐릭터 일러스트, 라이브2D 모션과 3D 모델',
+		icon: 'icons/image.svg',
+		tone: 'blue'
+	},
+	{
+		name: '카제나 덱 빌더',
+		link: 'https://tlnd.cc/czn',
+		domain: 'tlnd.cc/czn',
+		description: '카오스 제로 나이트메어 덱 편집과 공유',
+		icon: 'icons/cards.svg',
+		tone: 'violet'
+	},
+	{
 		name: 'TL&D',
 		link: 'https://tlnd.cc',
 		domain: 'tlnd.cc',

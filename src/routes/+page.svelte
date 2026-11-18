@@ -2,7 +2,7 @@
 	import { asset } from '$app/paths';
 	import { services } from '#lib/services.js';
 	const description =
-		'메이플커마, 던파커마, 리딤커마, 이환·몬길 맵스와 TL&D. 게임과 일상을 위한 서비스를 한곳에서 만나보세요.';
+		'메이플커마, 던파커마, 리딤커마, 이환·몬길 맵스, 니케 맵스·에셋, 카제나 덱 빌더와 TL&D. 게임과 일상을 위한 서비스를 한곳에서 만나보세요.';
 </script>
 
 <svelte:head>
